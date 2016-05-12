@@ -1,7 +1,7 @@
 ANSWER_BANK = ["Maybe", "Always wear sunscreen", "Your mom", "Ha! You wish",
 					 "That's a stupid question", "42"]
 
-define_answers = -> {@answers = ANSWER_BANK.clone}
+@define_answers = -> {@answers = ANSWER_BANK.clone}
 
 def add_answers
 	user_answer = gets.strip
@@ -28,7 +28,7 @@ def get_input
 			add_answers
 			main
 		when 'reset_answers', 'reset answers'
-			define_answers.call
+			@define_answers.call
 			puts "\nAnswers reset successfully", "\n"
 			main
 		else
@@ -45,7 +45,7 @@ def main
 	end
 end
 
-define_answers.call
+@define_answers.call
 puts "\nWeclome to the Magic Eight Ball!"
 puts "Can you find the easter egg commands?", "\n"
 main
